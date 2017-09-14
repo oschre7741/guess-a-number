@@ -12,6 +12,7 @@ print("I'm thinking of a number from " + str(low) + " to " + str(high) + ".");
 guess = -1
 tries = 0
 
+#play the game
 while guess != rand and tries < limit:
     guess = input("Take a guess: ")
     guess = int(guess)
@@ -24,7 +25,7 @@ while guess != rand and tries < limit:
     tries += 1
 
 #tell player outcome
-if guess ==rand:
+if guess == rand:
     print("You win!")
 else:
     print("You're dumb. The number I was thinking of is " + str(rand) + ".")
