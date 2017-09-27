@@ -7,48 +7,55 @@ high = 1000
 
 # helper functions
 def show_start_screen():
-    print("*************************")
-    print("*  Guess a Number A.I!  *")
-    print("*************************")
+    print("   ______                        ___       _   __                __              __")
+    print("  / ____/_  _____  __________   /   |     / | / /_  ______ ___  / /_  ___  _____/ /")
+    print(" / / __/ / / / _ \/ ___/ ___/  / /| |    /  |/ / / / / __ `__ \/ __ \/ _ \/ ___/ / ")
+    print("/ /_/ / /_/ /  __(__  |__  )  / ___ |   / /|  / /_/ / / / / / / /_/ /  __/ /  /_/  ")
+    print("\____/\__,_/\___/____/____/  /_/  |_|  /_/ |_/\__,_/_/ /_/ /_/_.___/\___/_/  (_)   ")
 
 def show_credits():
-    pass
+    print("                                                                                             )                           ")
+    print("  *   )   )                                                               (             )        ( /(  (                 ") 
+    print("` )  /(( /((       (  (     )    )     (    (  (      )         )      )  )\ )  (    ( /( (      )\()) )\(   )  (     )  ") 
+    print(" ( )(_))\())\ (    )\))( ( /(   (     ))\   )\))(  ( /( (      (    ( /( (()/( ))\   )\()))\ )  ((_)\ ((_)\ /(( )\ ( /(  ")
+    print("(_(_()|(_)((_))\  ((_))\ )(_))  )\  '/((_) ((_)()\ )(_)))\     )\  ')(_)) ((_))((_) ((_)\(()/(    ((_) _((_|_))((_))(_)) ")
+    print("|_   _| |(_|_|(_)  (()(_|(_)_ _((_))(_))   _(()((_|(_)_((_)  _((_))((_)_  _| (_))   | |(_))(_))  / _ \| |(_))((_|_|(_)_  ")
+    print("  | | | ' \| (_-< / _` |/ _` | '  \() -_)  \ V  V / _` (_-< | '  \() _` / _` / -_)  | '_ \ || | | (_) | || \ V /| / _` | ")
+    print("  |_| |_||_|_/__/ \__, |\__,_|_|_|_|\___|   \_/\_/\__,_/__/ |_|_|_|\__,_\__,_\___|  |_.__/\_, |  \___/|_||_|\_/ |_\__,_| ")
+    print("                  |___/                                                                   |__/                           ")
+                                                                                                                                            
     
 def get_guess(current_low, current_high):
-    """
-    Return a truncated average of current low and high.
-    """
-    pass
+    a = (current_high + current_low) // 2
+    return a
 
 def pick_number():
-    """
-    Ask the player to think of a number between low and high.
-    Then  wait until the player presses enter.
-    """
-    pass
+    print("Think of a number between " + str(low) + " and " + str(high) + ".")
 
 def check_guess(guess):
-    """
-    Computer will ask if guess was too high, low, or correct.
-
-    Returns -1 if the guess was too low
-             0 if the guess was correct
-             1 if the guess was too high
-    """
+    print("Was my guess too high, too low, or correct?")
+    check = input()
+    
+    if check == "too high":
+        return 1
+    elif check == "too low":
+        return -1
+    else check == "correct":
+        return 0
 
 def show_result():
-    """
-    Says the result of the game. (The computer might always win.)
-    """
-    pass
+    if guess.lower == "correct":
+        print("Haha! I got it!")
+    else:
+        print("Dang it. Maybe next time.")
 
 def play_again():
     while True:
         decision = input("Would you like to play again? (y/n) ")
 
-        if decision == 'y' or decision == 'yes':
+        if decision.lower == 'y' or decision.lower == 'yes':
             return True
-        elif decision == 'n' or decision == 'no':
+        elif decision.lower == 'n' or decision.lower == 'no':
             return False
         else:
             print("I don't understand. Please enter 'y' or 'n'.")
@@ -65,11 +72,10 @@ def play():
         check = check_guess(guess)
 
         if check == -1:
-            # adjust current_low
-            pass
+            guess = current_low
         elif check == 1:
-            # adjust current_high
-            pass
+            guess = current_high
+           
 
     show_result(guess, rand)
 
