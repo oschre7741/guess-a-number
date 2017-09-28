@@ -23,28 +23,28 @@ def show_credits():
     print("  | | | ' \| (_-< / _` |/ _` | '  \() -_)  \ V  V / _` (_-< | '  \() _` / _` / -_)  | '_ \ || | | (_) | || \ V /| / _` | ")
     print("  |_| |_||_|_/__/ \__, |\__,_|_|_|_|\___|   \_/\_/\__,_/__/ |_|_|_|\__,_\__,_\___|  |_.__/\_, |  \___/|_||_|\_/ |_\__,_| ")
     print("                  |___/                                                                   |__/                           ")
-                                                                                                                                            
-    
+
+                                                                                                        
 def get_guess(current_low, current_high):
-    a = (current_high + current_low) // 2
-    return a
+    guess = (current_high + current_low) // 2
+    return guess
 
 def pick_number():
     print("Think of a number between " + str(low) + " and " + str(high) + ".")
-
+    input("Press enter to continue")
+                                   
 def check_guess(guess):
     print("Was my guess too high, too low, or correct?")
-    check = input()
-    
-    if check == "too high":
+    answer = input()
+    if answer == "too high":
         return 1
-    elif check == "too low":
+    elif answer == "too low":
         return -1
-    else check == "correct":
-        return 0
-
+    else answer == "correct":
+        return 0  
+    
 def show_result():
-    if guess.lower == "correct":
+    if answer == "correct":
         print("Haha! I got it!")
     else:
         print("Dang it. Maybe next time.")
@@ -59,7 +59,7 @@ def play_again():
             return False
         else:
             print("I don't understand. Please enter 'y' or 'n'.")
-
+            
 def play():
     current_low = low
     current_high = high
