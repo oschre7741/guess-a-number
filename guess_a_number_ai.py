@@ -1,32 +1,43 @@
-import random
+#Guess a Number AI
+#You think of a number, computer tries to get it
 
-# config
+#9-25-2017
+
+#Olivia S.
+
+#config
 low = 1
-high = 1000
-
+high = 100
 
 # helper functions
 def show_start_screen():
-    print("   ______                        ___       _   __                __              __")
-    print("  / ____/_  _____  __________   /   |     / | / /_  ______ ___  / /_  ___  _____/ /")
-    print(" / / __/ / / / _ \/ ___/ ___/  / /| |    /  |/ / / / / __ `__ \/ __ \/ _ \/ ___/ / ")
-    print("/ /_/ / /_/ /  __(__  |__  )  / ___ |   / /|  / /_/ / / / / / / /_/ /  __/ /  /_/  ")
-    print("\____/\__,_/\___/____/____/  /_/  |_|  /_/ |_/\__,_/_/ /_/ /_/_.___/\___/_/  (_)   ")
-
+    print("  ▄████  █    ██ ▓█████   ██████   ██████     ▄▄▄          ███▄    █  █    ██  ███▄ ▄███▓ ▄▄▄▄   ▓█████  ██▀███      ▄▄▄       ██▓")
+    print(" ██▒ ▀█▒ ██  ▓██▒▓█   ▀ ▒██    ▒ ▒██    ▒    ▒████▄        ██ ▀█   █  ██  ▓██▒▓██▒▀█▀ ██▒▓█████▄ ▓█   ▀ ▓██ ▒ ██▒   ▒████▄    ▓██▒")
+    print("▒██░▄▄▄░▓██  ▒██░▒███   ░ ▓██▄   ░ ▓██▄      ▒██  ▀█▄     ▓██  ▀█ ██▒▓██  ▒██░▓██    ▓██░▒██▒ ▄██▒███   ▓██ ░▄█ ▒   ▒██  ▀█▄  ▒██▒")
+    print("░▓█  ██▓▓▓█  ░██░▒▓█  ▄   ▒   ██▒  ▒   ██▒   ░██▄▄▄▄██    ▓██▒  ▐▌██▒▓▓█  ░██░▒██    ▒██ ▒██░█▀  ▒▓█  ▄ ▒██▀▀█▄     ░██▄▄▄▄██ ░██░")
+    print("░▒▓███▀▒▒▒█████▓ ░▒████▒▒██████▒▒▒██████▒▒    ▓█   ▓██▒   ▒██░   ▓██░▒▒█████▓ ▒██▒   ░██▒░▓█  ▀█▓░▒████▒░██▓ ▒██▒    ▓█   ▓██▒░██░")
+    print(" ░▒   ▒ ░▒▓▒ ▒ ▒ ░░ ▒░ ░▒ ▒▓▒ ▒ ░▒ ▒▓▒ ▒ ░    ▒▒   ▓▒█░   ░ ▒░   ▒ ▒ ░▒▓▒ ▒ ▒ ░ ▒░   ░  ░░▒▓███▀▒░░ ▒░ ░░ ▒▓ ░▒▓░    ▒▒   ▓▒█░░▓  ")
+    print("  ░   ░ ░░▒░ ░ ░  ░ ░  ░░ ░▒  ░ ░░ ░▒  ░ ░     ▒   ▒▒ ░   ░ ░░   ░ ▒░░░▒░ ░ ░ ░  ░      ░▒░▒   ░  ░ ░  ░  ░▒ ░ ▒░     ▒   ▒▒ ░ ▒ ░")
+    print("░ ░   ░  ░░░ ░ ░    ░   ░  ░  ░  ░  ░  ░       ░   ▒         ░   ░ ░  ░░░ ░ ░ ░      ░    ░    ░    ░     ░░   ░      ░   ▒    ▒ ░")
+    print("      ░    ░        ░  ░      ░        ░           ░  ░            ░    ░            ░    ░         ░  ░   ░              ░  ░ ░  ")
+    print("                                                                                               ░                                  ")
+    
 def show_credits():
-    print("                                                                                             )                           ")
-    print("  *   )   )                                                               (             )        ( /(  (                 ") 
-    print("` )  /(( /((       (  (     )    )     (    (  (      )         )      )  )\ )  (    ( /( (      )\()) )\(   )  (     )  ") 
-    print(" ( )(_))\())\ (    )\))( ( /(   (     ))\   )\))(  ( /( (      (    ( /( (()/( ))\   )\()))\ )  ((_)\ ((_)\ /(( )\ ( /(  ")
-    print("(_(_()|(_)((_))\  ((_))\ )(_))  )\  '/((_) ((_)()\ )(_)))\     )\  ')(_)) ((_))((_) ((_)\(()/(    ((_) _((_|_))((_))(_)) ")
-    print("|_   _| |(_|_|(_)  (()(_|(_)_ _((_))(_))   _(()((_|(_)_((_)  _((_))((_)_  _| (_))   | |(_))(_))  / _ \| |(_))((_|_|(_)_  ")
-    print("  | | | ' \| (_-< / _` |/ _` | '  \() -_)  \ V  V / _` (_-< | '  \() _` / _` / -_)  | '_ \ || | | (_) | || \ V /| / _` | ")
-    print("  |_| |_||_|_/__/ \__, |\__,_|_|_|_|\___|   \_/\_/\__,_/__/ |_|_|_|\__,_\__,_\___|  |_.__/\_, |  \___/|_||_|\_/ |_\__,_| ")
-    print("                  |___/                                                                   |__/                           ")
+    print("                                                                  *                                    )                     (     ")  
+    print("  *   )   )        (                         (  (               (  `         (            (         ( /(  (                  )\ )  ")  
+    print("` )  /(( /((       )\ )      )    )     (    )\))(   '   )      )\))(     )  )\ )  (    ( )\ (      )\()) )\(   )  (     )  (()/(  ")
+    print(" ( )(_))\())\ (   (()/(   ( /(   (     ))\  ((_)()\ ) ( /( (   ((_)()\ ( /( (()/( ))\   )((_))\ )  ((_)\ ((_)\ /(( )\ ( /(   /(_)) ")
+    print("(_(_()|(_)((_))\   /(_))_ )(_))  )\  '/((_) _(())\_)())(_)))\  (_()((_))(_)) ((_))((_) ((_)_(()/(    ((_) _((_|_))((_))(_)) (_))   ")
+    print("|_   _| |(_|_|(_) (_)) __((_)_ _((_))(_))   \ \((_)/ ((_)_((_) |  \/  ((_)_  _| (_))    | _ ))(_))  / _ \| |(_))((_|_|(_)_  / __|  ")
+    print("  | | | ' \| (_-<   | (_ / _` | '  \() -_)   \ \/\/ // _` (_-< | |\/| / _` / _` / -_)   | _ \ || | | (_) | || \ V /| / _` | \__ \  ")
+    print("  |_| |_||_|_/__/    \___\__,_|_|_|_|\___|    \_/\_/ \__,_/__/ |_|  |_\__,_\__,_\___|   |___/\_, |  \___/|_||_|\_/ |_\__,_| |___/  ")
+    print("                                                                                             |__/                                  ")                                                                                                     
 
-                                                                                                        
+
+    
 def get_guess(current_low, current_high):
     guess = (current_high + current_low) // 2
+    print(guess)
     return guess
 
 def pick_number():
@@ -36,26 +47,25 @@ def pick_number():
 def check_guess(guess):
     print("Was my guess too high, too low, or correct?")
     answer = input()
-    if answer == "too high":
+    if answer.lower() == "too high" or answer.lower() == "l":
         return 1
-    elif answer == "too low":
+    elif answer.lower() == "too low" or answer.lower() == "h":
         return -1
-    else answer == "correct":
-        return 0  
-    
-def show_result():
-    if answer == "correct":
-        print("Haha! I got it!")
+    elif answer.lower() == "correct" or answer.lower() == "c":
+        return 0
     else:
-        print("Dang it. Maybe next time.")
+        print("I don't understand. Please enter too high, too low, or correct.")
+
+def show_result():
+    print("Haha! I got it!")
 
 def play_again():
     while True:
         decision = input("Would you like to play again? (y/n) ")
 
-        if decision.lower == 'y' or decision.lower == 'yes':
+        if decision.lower() == 'y' or decision.lower() == 'yes':
             return True
-        elif decision.lower == 'n' or decision.lower == 'no':
+        elif decision.lower() == 'n' or decision.lower() == 'no':
             return False
         else:
             print("I don't understand. Please enter 'y' or 'n'.")
@@ -72,13 +82,11 @@ def play():
         check = check_guess(guess)
 
         if check == -1:
-            guess = current_low
+            current_low = guess
         elif check == 1:
-            guess = current_high
+            current_high = guess
            
-
-    show_result(guess, rand)
-
+    show_result()
 
 # Game starts running here
 show_start_screen()
