@@ -5,12 +5,8 @@
 
 #Olivia S.
 
-import math
 
 #config
-low = input()
-high = input()
-limit = math.ceil(math.log(high - low + 1 ,2))
 
 # helper functions
 def show_start_screen():
@@ -39,10 +35,11 @@ def show_credits():
 def low_and_high():
     print("What would you like to be the low value?")
     low = input()
-    return low
+    
     print("And what would you like to be the high value?")
     high = input()
-    return high
+    
+    return int(low), int(high)
     
 def get_guess(current_low, current_high):
     guess = (current_high + current_low) // 2
@@ -56,7 +53,6 @@ def get_name():
 
 def pick_number(name, low, high):
     print("Think of a number between " + str(low) + " and " + str(high) + ", " + str(name))
-    print("I will try to guess your number in " + str(limit) + " tries")
     input("Press enter to continue")
                                    
 def check_guess(guess, name):
@@ -71,8 +67,9 @@ def check_guess(guess, name):
     else:
         print("I don't understand, " + str(name) + "." + " Please enter too high, too low, or correct.")
 
-def show_result(name):
-    print("Haha! I got it, " + str(name) + "!")
+        
+def show_result(name, tries):
+    print("Haha! I got it in " + str(tries) + ", " + str(name) + "!")
 
 def play_again():
     while True:
@@ -86,14 +83,12 @@ def play_again():
             print("I don't understand. Please enter 'y' or 'n'.")
             
 def play():
-    current_low = low
-    current_high = high
+    current_low, current_high = low_and_high()
     check = -1
     tries = 0
     
-    low_and_high()
     name = get_name()
-    pick_number(name, low, high)
+    pick_number(name, current_low, current_high)
     
     while check != 0:
         guess = get_guess(current_low, current_high)
