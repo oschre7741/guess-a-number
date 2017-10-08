@@ -69,7 +69,7 @@ def check_guess(guess, name):
 
         
 def show_result(name, tries):
-    print("Haha! I got it in " + str(tries) + ", " + str(name) + "!")
+    print("Haha! I got it in " + str(tries) + " tries, " + str(name) + "!")
 
 def play_again():
     while True:
