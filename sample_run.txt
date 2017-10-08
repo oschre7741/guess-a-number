@@ -1,0 +1,74 @@
+Python 3.6.2 (v3.6.2:5fd33b5, Jul  8 2017, 04:14:34) [MSC v.1900 32 bit (Intel)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+ RESTART: C:\Users\Olivia Schreiner\Desktop\python projects\guess_a_number_ai.py 
+  ▄████  █    ██ ▓█████   ██████   ██████     ▄▄▄          ███▄    █  █    ██  ███▄ ▄███▓ ▄▄▄▄   ▓█████  ██▀███      ▄▄▄       ██▓
+ ██▒ ▀█▒ ██  ▓██▒▓█   ▀ ▒██    ▒ ▒██    ▒    ▒████▄        ██ ▀█   █  ██  ▓██▒▓██▒▀█▀ ██▒▓█████▄ ▓█   ▀ ▓██ ▒ ██▒   ▒████▄    ▓██▒
+▒██░▄▄▄░▓██  ▒██░▒███   ░ ▓██▄   ░ ▓██▄      ▒██  ▀█▄     ▓██  ▀█ ██▒▓██  ▒██░▓██    ▓██░▒██▒ ▄██▒███   ▓██ ░▄█ ▒   ▒██  ▀█▄  ▒██▒
+░▓█  ██▓▓▓█  ░██░▒▓█  ▄   ▒   ██▒  ▒   ██▒   ░██▄▄▄▄██    ▓██▒  ▐▌██▒▓▓█  ░██░▒██    ▒██ ▒██░█▀  ▒▓█  ▄ ▒██▀▀█▄     ░██▄▄▄▄██ ░██░
+░▒▓███▀▒▒▒█████▓ ░▒████▒▒██████▒▒▒██████▒▒    ▓█   ▓██▒   ▒██░   ▓██░▒▒█████▓ ▒██▒   ░██▒░▓█  ▀█▓░▒████▒░██▓ ▒██▒    ▓█   ▓██▒░██░
+ ░▒   ▒ ░▒▓▒ ▒ ▒ ░░ ▒░ ░▒ ▒▓▒ ▒ ░▒ ▒▓▒ ▒ ░    ▒▒   ▓▒█░   ░ ▒░   ▒ ▒ ░▒▓▒ ▒ ▒ ░ ▒░   ░  ░░▒▓███▀▒░░ ▒░ ░░ ▒▓ ░▒▓░    ▒▒   ▓▒█░░▓  
+  ░   ░ ░░▒░ ░ ░  ░ ░  ░░ ░▒  ░ ░░ ░▒  ░ ░     ▒   ▒▒ ░   ░ ░░   ░ ▒░░░▒░ ░ ░ ░  ░      ░▒░▒   ░  ░ ░  ░  ░▒ ░ ▒░     ▒   ▒▒ ░ ▒ ░
+░ ░   ░  ░░░ ░ ░    ░   ░  ░  ░  ░  ░  ░       ░   ▒         ░   ░ ░  ░░░ ░ ░ ░      ░    ░    ░    ░     ░░   ░      ░   ▒    ▒ ░
+      ░    ░        ░  ░      ░        ░           ░  ░            ░    ░            ░    ░         ░  ░   ░              ░  ░ ░  
+                                                                                               ░                                  
+What would you like to be the low value?
+1
+And what would you like to be the high value?
+100
+What is your name?
+Olivia
+Think of a number between 1 and 100, Olivia
+Press enter to continue
+50
+Olivia, was my guess too high, too low, or correct?
+too low
+75
+Olivia, was my guess too high, too low, or correct?
+too high
+62
+Olivia, was my guess too high, too low, or correct?
+correct
+Haha! I got it in 3 tries, Olivia!
+Would you like to play again? (y/n) yes
+What would you like to be the low value?
+16
+And what would you like to be the high value?
+732
+What is your name?
+Olivia
+Think of a number between 16 and 732, Olivia
+Press enter to continue
+374
+Olivia, was my guess too high, too low, or correct?
+too low
+553
+Olivia, was my guess too high, too low, or correct?
+too high
+463
+Olivia, was my guess too high, too low, or correct?
+l
+418
+Olivia, was my guess too high, too low, or correct?
+l
+396
+Olivia, was my guess too high, too low, or correct?
+h
+407
+Olivia, was my guess too high, too low, or correct?
+h
+412
+Olivia, was my guess too high, too low, or correct?
+correct
+Haha! I got it in 7 tries, Olivia!
+Would you like to play again? (y/n) n
+                                                                  *                                    )                     (     
+  *   )   )        (                         (  (               (  `         (            (         ( /(  (                  )\ )  
+` )  /(( /((       )\ )      )    )     (    )\))(   '   )      )\))(     )  )\ )  (    ( )\ (      )\()) )\(   )  (     )  (()/(  
+ ( )(_))\())\ (   (()/(   ( /(   (     ))\  ((_)()\ ) ( /( (   ((_)()\ ( /( (()/( ))\   )((_))\ )  ((_)\ ((_)\ /(( )\ ( /(   /(_)) 
+(_(_()|(_)((_))\   /(_))_ )(_))  )\  '/((_) _(())\_)())(_)))\  (_()((_))(_)) ((_))((_) ((_)_(()/(    ((_) _((_|_))((_))(_)) (_))   
+|_   _| |(_|_|(_) (_)) __((_)_ _((_))(_))   \ \((_)/ ((_)_((_) |  \/  ((_)_  _| (_))    | _ ))(_))  / _ \| |(_))((_|_|(_)_  / __|  
+  | | | ' \| (_-<   | (_ / _` | '  \() -_)   \ \/\/ // _` (_-< | |\/| / _` / _` / -_)   | _ \ || | | (_) | || \ V /| / _` | \__ \  
+  |_| |_||_|_/__/    \___\__,_|_|_|_|\___|    \_/\_/ \__,_/__/ |_|  |_\__,_\__,_\___|   |___/\_, |  \___/|_||_|\_/ |_\__,_| |___/  
+                                                                                             |__/                                  
+>>> 
