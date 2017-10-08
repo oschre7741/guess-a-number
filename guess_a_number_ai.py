@@ -101,7 +101,7 @@ def play():
         elif check == 1:
             current_high = guess
            
-    show_result(name)
+    show_result(name, tries)
 
 # Game starts running here
 show_start_screen()
